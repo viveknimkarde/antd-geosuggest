@@ -79,7 +79,7 @@ export default class AntdGeosuggest extends React.Component<Props, State> {
 
     if (!disabled && !multiple && value.length >= 1 && this.selection) {
       this.selection.blur()
-      this.setState({disabled: true})
+      this.setState({disabled: false})
     }
   }
 
@@ -189,7 +189,6 @@ export default class AntdGeosuggest extends React.Component<Props, State> {
         >
           {data.map(d => <Option key={d.placeId}>{d.address}</Option>)}
         </Select>
-        <Button onClick={this.clearValue}>Clear</Button>
       </div>
     );
   }
